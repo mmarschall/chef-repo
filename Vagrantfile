@@ -4,6 +4,10 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = :latest
   config.berkshelf.enabled = true
 
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
+  end
+
   config.vm.provision :chef_client do |chef|
     chef.provisioning_path = "/etc/chef"
     chef.chef_server_url = "https://api.opscode.com/organizations/awo"
