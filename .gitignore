@@ -7,3 +7,5 @@
 .chef/encrypted_data_bag_secret
 .vagrant
 nodes/*
+.kitchen/
+.kitchen.local.yml
