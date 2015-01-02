@@ -1,9 +1,9 @@
 #
-# Cookbook Name:: my_cookbook
+# Cookbook Name:: greeting
 # Recipe:: default
 #
 # Copyright (c) 2014 The Authors, All Rights Reserved.
-
-capistrano_deploy_dirs do
-  deploy_to "/srv"
+greeting "Ohai" do
+  title "Chef"
+  action :create
 end

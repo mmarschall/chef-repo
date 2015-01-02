@@ -1,5 +1,6 @@
 DEPENDENCIES
-  ntp
+  my_cookbook
+    path: cookbooks/my_cookbook
 
 GRAPH
-  ntp (1.7.0)
+  my_cookbook (0.1.0)
