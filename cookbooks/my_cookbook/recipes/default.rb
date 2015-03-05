@@ -4,6 +4,8 @@
 #
 # Copyright (c) 2014 The Authors, All Rights Reserved.
 
-capistrano_deploy_dirs do
-  deploy_to "/srv"
+include_recipe 'apt'
+
+varnish_install "webapp" do
+  vendor_repo true
 end

@@ -1,4 +1,3 @@
 source 'https://supermarket.getchef.com'
 
-cookbook 'iptables'
-cookbook 'chef-client'
+cookbook 'my_cookbook', path: './cookbooks/my_cookbook'
