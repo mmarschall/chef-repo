@@ -1,0 +1,10 @@
+{
+  "run_list": [
+    "recipe[nginx]"
+  ],
+  "container_service": {
+    "nginx": {
+      "command": "/usr/sbin/nginx -c /etc/conf/nginx.conf"
+    }
+  }
+}
