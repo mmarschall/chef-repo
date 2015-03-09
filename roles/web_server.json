@@ -1,0 +1,12 @@
+{
+  "name": "web_server",
+  "default_attributes": {
+    "nginx": {
+      "init_style": "init",
+      "enable_default_site": false
+    }
+  },
+  "run_list": [
+    "recipe[my_cookbook]"
+  ]
+}
