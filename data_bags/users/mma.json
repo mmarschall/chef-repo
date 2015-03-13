@@ -1,8 +1,8 @@
 {
   "id": "mma",
-  "ssh_keys": [
-    "ssh-rsa AAA345...bla== mma@laptop"
-  ],
-  "groups": [ "staff"],
-  "shell": "\/bin\/bash"
+  "htpasswd": "{SHA}5en6G6MezRroT3XKqkdPOmY/BfQ=",
+  "groups": "sysadmin",
+  "nagios": {
+  	"email": "mm@agileweboperations.com"
+  }
 }

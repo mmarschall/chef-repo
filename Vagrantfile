@@ -4,15 +4,11 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = :latest
   config.berkshelf.enabled = true
 
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
   config.vm.provider :virtualbox do |vb|
     vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
   end
-
-  #config.vm.provider "docker" do |d|
-  #  d.image = "chef/ubuntu-14.04"
-  #  d.has_ssh = true
-  #  d.remains_running = true
-  #end
 
   config.vm.provision :chef_client do |chef|
     chef.provisioning_path = "/etc/chef"
