@@ -1,5 +1,4 @@
 source 'https://supermarket.getchef.com'
 
-#cookbook 'my_cookbook', path: './cookbooks/my_cookbook'
-cookbook 'resource-control'
-cookbook 'nagios'
+cookbook 'apt'
+cookbook 'my_cookbook', path: './cookbooks/my_cookbook'

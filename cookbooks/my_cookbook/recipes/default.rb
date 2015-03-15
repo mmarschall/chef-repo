@@ -4,8 +4,25 @@
 #
 # Copyright (c) 2014 The Authors, All Rights Reserved.
 
-node.default['snmp']['syslocationVirtual'] = "Vagrant VirtualBox"
-node.default['snmp']['syslocationPhysical'] = "My laptop"
-node.default['snmp']['full_systemview'] = true
+include_recipe 'apt'
+include_recipe "heartbeat"
 
-include_recipe "snmp"
+heartbeat "heartbeat" do
+  authkeys "MySecrectAuthPassword"
+  autojoin "none"
+  warntime 5
+  deadtime 15
+  initdead 60
+  keepalive 2
+  logfacility "syslog"
+  interface "eth1"
+  mode "bcast"
+  udpport 694
+  auto_failback true
+
+  resources "192.168.0.100"
+
+  search "name:ha*"
+end
+
+

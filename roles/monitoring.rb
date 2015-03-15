@@ -2,7 +2,7 @@ name "monitoring"
 description "Nagios server"
 run_list(
   "recipe[apt]",
-  "recipe[nagios::default]"
+  "recipe[my_cookbook]"
 )
 
 default_attributes(

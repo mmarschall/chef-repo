@@ -1,4 +1,5 @@
 name 'my_cookbook'
-version '0.3.0'
+version '0.4.3'
 
-depends 'snmp'
+depends 'apt'
+depends 'heartbeat'
