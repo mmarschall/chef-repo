@@ -1,11 +1,15 @@
 DEPENDENCIES
-  apt
   my_cookbook
     path: cookbooks/my_cookbook
 
 GRAPH
-  apt (2.6.1)
-  heartbeat (1.0.0)
-  my_cookbook (0.4.3)
-    apt (>= 0.0.0)
-    heartbeat (>= 0.0.0)
+  fail2ban (2.2.1)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  iptables (0.14.1)
+  my_cookbook (0.4.11)
+    fail2ban (>= 0.0.0)
+    iptables (>= 0.0.0)
+  yum (3.5.3)
+  yum-epel (0.6.0)
+    yum (~> 3.0)

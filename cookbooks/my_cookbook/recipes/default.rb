@@ -4,25 +4,17 @@
 #
 # Copyright (c) 2014 The Authors, All Rights Reserved.
 
-include_recipe 'apt'
-include_recipe "heartbeat"
+include_recipe "iptables"
+iptables_rule "ssh"
 
-heartbeat "heartbeat" do
-  authkeys "MySecrectAuthPassword"
-  autojoin "none"
-  warntime 5
-  deadtime 15
-  initdead 60
-  keepalive 2
-  logfacility "syslog"
-  interface "eth1"
-  mode "bcast"
-  udpport 694
-  auto_failback true
+node.default['fail2ban']['services'] = {
+  'ssh-ddos' => {
+        "enabled" => "true",
+        "port" => "ssh",
+        "filter" => "sshd-ddos",
+        "logpath" => node['fail2ban']['auth_log'],
+        "maxretry" => "6"
+     }
+}
 
-  resources "192.168.0.100"
-
-  search "name:ha*"
-end
-
-
+include_recipe "fail2ban"

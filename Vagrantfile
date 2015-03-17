@@ -25,8 +25,9 @@ Vagrant.configure("2") do |config|
     vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
   end
 
-  #define_node(config, :server)
-  define_node(config, :ha1, "192.168.0.101", 'my_cookbook')
-  define_node(config, :ha2, "192.168.0.102", 'my_cookbook')
+  define_node(config, :server, "192.168.0.100")
+  
+  #define_node(config, :ha1, "192.168.0.101", 'my_cookbook')
+  #define_node(config, :ha2, "192.168.0.102", 'my_cookbook')
 end 
 

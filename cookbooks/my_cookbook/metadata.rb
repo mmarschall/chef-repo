@@ -1,5 +1,5 @@
 name 'my_cookbook'
-version '0.4.3'
+version '0.4.11'
 
-depends 'apt'
-depends 'heartbeat'
+depends 'iptables'
+depends 'fail2ban'
