@@ -22,7 +22,7 @@ exists() {
 <% if knife_config[:bootstrap_install_command] %>
   <%= knife_config[:bootstrap_install_command] %>
 <% else %>
-  install_sh="<%= knife_config[:bootstrap_url] ? knife_config[:bootstrap_url] : "https://www.chef.io/chef/install.sh" %>"
+  install_sh="<%= knife_config[:bootstrap_url] ? knife_config[:bootstrap_url] : "https://www.opscode.com/chef/install.sh" %>"
   if ! exists /usr/bin/chef-client; then
     echo "Installing Chef Client..."
     if exists wget; then
@@ -38,13 +38,9 @@ exists() {
 
 mkdir -p /etc/chef
 
-cat > /etc/chef/greeting.txt <<'EOP'
-Ohai, Chef!
-EOP
-
-<% if @chef_config[:client_pem] -%>
+<% if client_pem -%>
 cat > /etc/chef/client.pem <<'EOP'
-<%= ::File.read(::File.expand_path(@chef_config[:client_pem])) %>
+<%= ::File.read(::File.expand_path(client_pem)) %>
 EOP
 chmod 0600 /etc/chef/client.pem
 <% end -%>
@@ -63,9 +59,9 @@ EOP
 chmod 0600 /etc/chef/encrypted_data_bag_secret
 <% end -%>
 
-<% if @chef_config[:trusted_certs] -%>
+<% unless trusted_certs.empty? -%>
 mkdir -p /etc/chef/trusted_certs
-<%= @chef_config[:trusted_certs] %>
+<%= trusted_certs %>
 <% end -%>
 
 <%# Generate Ohai Hints -%>
