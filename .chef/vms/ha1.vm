@@ -1,0 +1,6 @@
+Vagrant.configure('2') do |outer_config|
+  outer_config.vm.define "ha1" do |config|
+    config.vm.box = "opscode-ubuntu-14.04"
+    config.vm.hostname = "ha1"
+  end
+end

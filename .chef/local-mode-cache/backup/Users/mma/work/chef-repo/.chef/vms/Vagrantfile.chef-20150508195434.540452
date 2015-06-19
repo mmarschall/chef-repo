@@ -1,0 +1,3 @@
+Dir.glob('/Users/mma/.chef/vms/*.vm') do |vm_file|
+  eval(IO.read(vm_file), nil, vm_file)
+end

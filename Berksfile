@@ -1,3 +1,3 @@
-source 'https://supermarket.getchef.com'
+source 'https://supermarket.chef.io'
 
-cookbook 'my_cookbook', path: './cookbooks/my_cookbook'
+cookbook 'application_java'
