@@ -4,17 +4,30 @@
 #
 # Copyright (c) 2014 The Authors, All Rights Reserved.
 
-include_recipe "iptables"
-iptables_rule "ssh"
+include_recipe "nginx"
 
-node.default['fail2ban']['services'] = {
-  'ssh-ddos' => {
-        "enabled" => "true",
-        "port" => "ssh",
-        "filter" => "sshd-ddos",
-        "logpath" => node['fail2ban']['auth_log'],
-        "maxretry" => "6"
-     }
-}
+nginx_site "default" do
+  enable false
+end
 
-include_recipe "fail2ban"
+app_name = "my_app"
+app_home = "/srv/#{app_name}"
+
+template "#{node[:nginx][:dir]}/sites-available/#{app_name}" do
+  source "nginx-site-#{app_name}.erb"
+  owner  "root"
+  group  "root"
+  mode   "0644"
+  variables :app_home => app_home
+  notifies :restart, resources(:service => "nginx")
+end
+
+directory "#{app_home}/public" do
+  recursive true
+end
+
+file "#{app_home}/public/index.html" do
+  content "<h1>Hello World!</h1>"
+end
+
+nginx_site "#{app_name}"
