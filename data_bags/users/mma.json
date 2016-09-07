@@ -1,8 +1,0 @@
-{
-  "id": "mma",
-  "htpasswd": "{SHA}5en6G6MezRroT3XKqkdPOmY/BfQ=",
-  "groups": "sysadmin",
-  "nagios": {
-  	"email": "mm@agileweboperations.com"
-  }
-}
