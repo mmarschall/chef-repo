@@ -3,6 +3,8 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-file "/tmp/local_mode.txt" do
-    content "created by chef client local mode"
+node.default['my_cookbook']['greeting'] = "Go!"
+
+template '/tmp/greeting.txt' do
+  variables greeting: node['my_cookbook']['greeting']
 end
