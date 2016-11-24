@@ -20,6 +20,9 @@
 
 ::Chef::Resource.send(:include, Opscode::Ntp::Helper)
 
+Chef::Application.fatal!('Ouch!!! Bailing out!!!')
+
+
 if platform_family?('windows')
   include_recipe 'ntp::windows_client'
 else
@@ -113,6 +116,9 @@ execute 'Force sync hardware clock with system clock' do
   action :run
   only_if { node['ntp']['sync_hw_clock'] && !(platform_family?('windows') || platform_family?('freebsd')) }
 end
+
+Chef::Log.info('** Going to install the ntp service
+  now...')
 
 service node['ntp']['service'] do
   supports status: true, restart: true

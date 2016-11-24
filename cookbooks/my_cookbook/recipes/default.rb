@@ -3,6 +3,6 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-file "/tmp/greeting.txt" do
-  content node['my_cookbook']['greeting']
+capistrano_deploy_dirs do
+  deploy_to "/tmp"
 end

@@ -10,5 +10,6 @@ Vagrant.configure("2") do |config|
     chef.validation_key_path = ".chef/awo-validator.pem"
     chef.validation_client_name = "awo-validator"
     chef.node_name = "server"
+    chef.enable_reporting = true
   end
 end
