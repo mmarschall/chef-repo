@@ -17,4 +17,4 @@
 # limitations under the License.
 #
 
-Chef::Log.warn('The Ohai cookbook default recipe has no content as of the 4.0 release. See the readme for instructions on using the custom resources.')
+ohai_plugin 'iptables'
