@@ -3,8 +3,7 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-servers = search(:node, "role:web")
-
-servers.each do |srv|
-  log srv.name
+http_request 'callback' do
+  url node['my_cookbook']['callback']['url']
+  only_if { node['my_cookbook']['callback']['enabled'] }
 end
