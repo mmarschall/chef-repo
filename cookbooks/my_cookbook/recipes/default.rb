@@ -3,6 +3,8 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-capistrano_deploy_dirs do
-  deploy_to "/tmp"
+servers = search(:node, "role:web")
+
+servers.each do |srv|
+  log srv.name
 end

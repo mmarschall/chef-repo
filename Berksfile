@@ -1,3 +1,3 @@
 source 'https://supermarket.chef.io'
 
-cookbook 'chef-client'
+cookbook 'my_cookbook', path: 'cookbooks/my_cookbook'
