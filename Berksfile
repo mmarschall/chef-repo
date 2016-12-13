@@ -1,5 +1,4 @@
 source 'https://supermarket.chef.io'
 
-cookbook 'apt'
-cookbook 'build-essential'
+cookbook 'my_cookbook', path: './cookbooks/my_cookbook'
 

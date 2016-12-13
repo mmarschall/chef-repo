@@ -1,7 +1,8 @@
 DEPENDENCIES
-  apt
+  my_cookbook
+    path: cookbooks/my_cookbook
 
 GRAPH
-  apt (5.0.0)
-    compat_resource (>= 12.14.7)
-  compat_resource (12.16.2)
+  my_cookbook (0.1.1)
+    users (>= 0.0.0)
+  users (4.0.3)

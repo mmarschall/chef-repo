@@ -7,8 +7,7 @@ long_description 'Installs/Configures my_cookbook'
 version '0.1.1'
 
 
-depends "apt"
-
+depends "users"
 
 # If you upload to Supermarket you should set this so your cookbook
 # gets a `View Issues` link
