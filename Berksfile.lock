@@ -1,8 +1,30 @@
 DEPENDENCIES
-  my_cookbook
-    path: cookbooks/my_cookbook
+  nginx
 
 GRAPH
-  my_cookbook (0.1.1)
-    users (>= 0.0.0)
-  users (4.0.3)
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
+  apt (2.9.2)
+  bluepill (2.4.3)
+    rsyslog (>= 2.0)
+  build-essential (2.4.0)
+    7-zip (>= 0.0.0)
+  compat_resource (12.16.2)
+  nginx (2.7.6)
+    apt (~> 2.2)
+    bluepill (~> 2.3)
+    build-essential (~> 2.0)
+    ohai (~> 2.0)
+    runit (~> 1.2)
+    yum-epel (~> 0.3)
+  ohai (2.1.0)
+  packagecloud (0.2.5)
+  rsyslog (5.0.1)
+    compat_resource (>= 12.14.6)
+  runit (1.8.0)
+    packagecloud (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  windows (2.0.2)
+  yum (4.1.0)
+  yum-epel (0.7.1)
+    yum (>= 3.6.3)
