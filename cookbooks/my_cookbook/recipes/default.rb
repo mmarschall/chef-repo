@@ -21,15 +21,10 @@ application "/usr/local/rails-app" do
 
   bundle_install do
     deployment true
-    without %w[test development]
   end
 
   rails do
     database 'sqlite3:///db.sqlite3'
     precompile_assets false
-  end
-
-  unicorn do
-    port 9001
   end
 end
