@@ -3,28 +3,33 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-include_recipe "chef_nginx"
 
-# work around for https://github.com/chef-cookbooks/chef_nginx/issues/62
-if !node['nginx']['default_site_enabled']
-  file "/etc/nginx/conf.d/default.conf" do
-    action :delete
+%w[git libsqlite3-dev].each do |p| # libssl-dev
+  package p
+end
+
+application "/usr/local/rails-app" do
+
+  owner "www-data"
+  group "www-data"
+
+  ruby_runtime "2"
+
+  git do
+    repository 'https://github.com/mmarschall/rails-app.git'
   end
-end
 
-app_name = "my_app"
-app_home = "/srv/#{app_name}"
+  bundle_install do
+    deployment true
+    without %w[test development]
+  end
 
-directory "#{app_home}/public" do
-  recursive true
-end
+  rails do
+    database 'sqlite3:///db.sqlite3'
+    precompile_assets false
+  end
 
-file "#{app_home}/public/index.html" do
-  content "<h1>Hello World!</h1>"
-end
-
-nginx_site "#{app_name}" do
-  template "nginx-site-#{app_name}.erb"
-  variables :app_home => app_home
-  action :enable
+  unicorn do
+    port 9001
+  end
 end
