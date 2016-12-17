@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-%w[git libsqlite3-dev].each do |p| # libssl-dev
+%w[git libsqlite3-dev].each do |p|
   package p
 end
 
