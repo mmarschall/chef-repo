@@ -26,5 +26,6 @@ application "/usr/local/rails-app" do
   rails do
     database 'sqlite3:///db.sqlite3'
     precompile_assets false
+    secret_token '4fd43ea2d5198a'
   end
 end
