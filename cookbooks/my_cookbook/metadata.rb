@@ -6,7 +6,8 @@ description 'Installs/Configures my_cookbook'
 long_description 'Installs/Configures my_cookbook'
 version '0.1.1'
 
-depends "application_ruby"
+depends "snmp"
+
 
 
 # If you upload to Supermarket you should set this so your cookbook
