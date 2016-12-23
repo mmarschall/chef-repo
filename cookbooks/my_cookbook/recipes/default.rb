@@ -3,7 +3,12 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-node.default['snmp']['syslocationVirtual'] = "Vagrant VirtualBox"
-node.default['snmp']['syslocationPhysical'] = "My laptop"
-node.default['snmp']['full_systemview'] = true
-include_recipe "snmp"
+include_recipe "apt"
+
+apt_repository 'php5' do
+  uri          'ppa:ondrej/php'
+  distribution node['lsb']['codename']
+end
+
+apt_package "php5.6"
+apt_package "libapache2-mod-php5.6"

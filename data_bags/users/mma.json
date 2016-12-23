@@ -1,8 +1,8 @@
 {
   "id": "mma",
-  "ssh_keys": [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDNqip5Q1Gbyuc8L3l4C9bkehrCZcsstG/3jrAhkHl+3BumoBcwCmHPi8SY74vmz6rA6AwcE1zPfqsXcJXF2OQcwuhlC0nY8rrnz8ckAcGaKlSvsh6JyWtJFEtWIxftwoEdP/TVJPMBY6aAs/PCJSBM46CUUTIY0PGjks6QaUoXMhbqk8Ds3cLhvS15ViE6ArJ0iHu57uFUxzMeI4tqaI/VP38dPYge3784Ydq7Up8rN1kxGh7pLpnh9Pnv2UBqIG+LaJj4iXeVcg5aqgnSf05T+9stCG4B40K/AkacbGC588xwAa1FhrbjPzS5+yHu2kU20onD+bZSrhv9VzCLb2l6U04iMdErXn98tL4jFQiHxb3bc+QJTYzm+5SHA61UhDymrqGhqO3py23M+NMwxxqkWPy8tPmr04QPfTb53YEuaWJa0ZoGKnmVP06/e9NnlCCzuiT4AulK4MFx7vFxQorfvCfUf7unustOfJaV8PF2B1hSftIeRpjNcTtDIRSAsdg9R0/CIT4jQUdmdeoK7W31y3COowbWTy25DHRaTlmwkmfl8CdVYgJOtLb+nZscjwEcuH8DNwHnaNUKBAnOBpFtKL1Yxy7uZemQLZK0RrAQu0bFOhMZZDAmwy/G65aYrJRY3OzLPH1bTBalpJCpb6fDkW0H6M/ohaaC5zjfxCYaKw== matthias.marschall@stylight.com"
-  ],
-  "groups": [ "staff"],
-  "shell": "\/bin\/bash"
+  "htpasswd": "{SHA}5en6G6MezRroT3XKqkdPOmY/BfQ=",
+  "groups": "sysadmin",
+  "nagios": {
+    "email": "mm@agileweboperations.com"
+  }
 }
