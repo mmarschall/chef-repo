@@ -7,6 +7,7 @@ long_description 'Installs/Configures my_cookbook'
 version '0.1.1'
 
 depends "iptables"
+depends "fail2ban"
 
 
 
