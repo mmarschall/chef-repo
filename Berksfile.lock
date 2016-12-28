@@ -3,13 +3,6 @@ DEPENDENCIES
     path: cookbooks/my_cookbook
 
 GRAPH
-  compat_resource (12.16.3)
-  fail2ban (3.1.0)
-    yum-epel (>= 0.0.0)
-  iptables (3.0.1)
-    compat_resource (>= 12.14.3)
+  habitat (0.2.0)
   my_cookbook (0.1.1)
-    fail2ban (>= 0.0.0)
-    iptables (>= 0.0.0)
-  yum-epel (2.1.0)
-    compat_resource (>= 12.16.3)
+    habitat (>= 0.0.0)
